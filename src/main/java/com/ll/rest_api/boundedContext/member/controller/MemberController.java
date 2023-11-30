@@ -17,6 +17,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/member", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+//produces은 받는 사람이 JSON인지 아닌지 구분해줌
 public class MemberController {
     private final MemberService memberService;
 
@@ -34,6 +35,14 @@ public class MemberController {
 
         resp.addHeader("Authentication", accessToken);
 
-        return "응답본문";
+        return """
+                {
+                  "resultCode": "S-1",
+                  "msg": "엑세스 토큰이 생성되었습니다.",
+                  "data": {
+                    "accessToken": "%s"
+                  }
+                }
+                """.formatted(accessToken).stripIndent();
     }
 }
