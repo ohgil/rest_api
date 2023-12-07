@@ -1,4 +1,4 @@
-package com.ll.rest_api.base.security;
+package com.ll.rest_api.base.security.config;
 
 import com.ll.rest_api.base.security.entryPoint.ApiAuthenticationEntryPoint;
 import com.ll.rest_api.base.security.filter.JwtAuthorizationFilter;
@@ -21,7 +21,7 @@ public class ApiSecurityConfig {
     private final ApiAuthenticationEntryPoint authenticationEntryPoint;
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
 
         http
                 .securityMatcher("/api/**") // 아래의 모든 설정 /api/** 경로에만 적용
