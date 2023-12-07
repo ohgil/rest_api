@@ -3,6 +3,7 @@
 - [x] #11 - 현재 로그인 한 회원의 정보를 보여주기 위해서 member/me 엔드포인트 개발
 - [x] #12 - member/me 에 대한 TC 추가
 - [x] #13 - CustomUserDetailsService 추가
+- [x] #14 - 요청 헤더 Authorization 키에 accessToken 포함 시 자동 로그인
 
 ## 23-12-01
 - [x] #8 - RsData, Response 클래스 도입해서 응답 규격화
