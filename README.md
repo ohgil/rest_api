@@ -4,6 +4,7 @@
 - [x] #12 - member/me 에 대한 TC 추가
 - [x] #13 - CustomUserDetailsService 추가
 - [x] #14 - 요청 헤더 Authorization 키에 accessToken 포함 시 자동 로그인
+- [x] #15 - JwtAuthorizationFilter에서 username 대신 id로 조회하도록 변경
 
 ## 23-12-01
 - [x] #8 - RsData, Response 클래스 도입해서 응답 규격화

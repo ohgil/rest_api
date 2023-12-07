@@ -1,7 +1,5 @@
 package com.ll.rest_api.boundedContext.member.controller;
-
 import com.ll.rest_api.base.rsData.RsData;
-
 import com.ll.rest_api.boundedContext.member.entity.Member;
 import com.ll.rest_api.boundedContext.member.service.MemberService;
 import jakarta.validation.Valid;
@@ -16,16 +14,11 @@ import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.ALL_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
-
-
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/api/v1/member", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
-//produces은 받는 사람이 JSON인지 아닌지 구분해줌
 public class ApiV1MemberController {
     private final MemberService memberService;
-
     @Data
     public static class LoginRequest {
         @NotBlank
@@ -33,17 +26,14 @@ public class ApiV1MemberController {
         @NotBlank
         private String password;
     }
-
     @AllArgsConstructor
     @Getter
     public static class LoginResponse {
         private final String accessToken;
     }
-
     @PostMapping("/login")
     public RsData<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
         String accessToken = memberService.genAccessToken(loginRequest.getUsername(), loginRequest.getPassword());
-
         return RsData.of(
                 "S-1",
                 "엑세스토큰이 생성되었습니다.",
