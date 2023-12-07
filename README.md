@@ -6,6 +6,9 @@
 - [x] #14 - 요청 헤더 Authorization 키에 accessToken 포함 시 자동 로그인
 - [x] #15 - JwtAuthorizationFilter에서 username 대신 id로 조회하도록 변경
 - [x] #16 - SpringDoc으로 API 설명 문서 자동 작성
+- [x] #17 - 스웨거 로그인 기능 구현
+- [x] #18 - 스프링, 스프링 시큐리티 인증 에러 메시지 커스터마이징
+- [x] #19 - 게시물 조회
 
 ## 23-12-01
 - [x] #8 - RsData, Response 클래스 도입해서 응답 규격화
