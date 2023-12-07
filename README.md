@@ -5,6 +5,7 @@
 - [x] #13 - CustomUserDetailsService 추가
 - [x] #14 - 요청 헤더 Authorization 키에 accessToken 포함 시 자동 로그인
 - [x] #15 - JwtAuthorizationFilter에서 username 대신 id로 조회하도록 변경
+- [x] #16 - SpringDoc으로 API 설명 문서 자동 작성
 
 ## 23-12-01
 - [x] #8 - RsData, Response 클래스 도입해서 응답 규격화
