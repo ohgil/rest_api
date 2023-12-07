@@ -1,6 +1,6 @@
 package com.ll.rest_api.base.jwt;
 
-import com.ll.rest_api.base.util.Ut;
+import com.ll.rest_api.util.Ut;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;

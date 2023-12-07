@@ -1,5 +1,6 @@
 package com.ll.rest_api.base.security;
 
+import com.ll.rest_api.base.security.entryPoint.ApiAuthenticationEntryPoint;
 import com.ll.rest_api.base.security.filter.JwtAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -16,12 +17,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class ApiSecurityConfig {
 
     private final JwtAuthorizationFilter jwtAuthorizationFilter;
+    private final ApiAuthenticationEntryPoint authenticationEntryPoint;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
                 .securityMatcher("/api/**") // 아래의 모든 설정 /api/** 경로에만 적용
+                .exceptionHandling(exceptionHandling -> exceptionHandling
+                        .authenticationEntryPoint(authenticationEntryPoint)
+                )
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers("/api/*/member/login").permitAll() // /member/login 아무나 접속 가능
                         .anyRequest().authenticated()) // 그 외는 인증된 사용자만 접속 가능
